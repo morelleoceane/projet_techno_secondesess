@@ -1,18 +1,21 @@
 <?php
 /**
- * Classe Connection - Singleton PDO PostgreSQL
+ * Classe Connection – Singleton PDO PostgreSQL
  * Fichier : Connection.class.php
+ *
+ * Fournit une unique instance PDO partagée dans toute l'application.
+ * Les paramètres de connexion viennent de db_pg_connect.php
+ * (lui-même chargé par all_includes.php).
  */
-
-class Connection {
+class Connection
+{
     private static ?PDO $instance = null;
 
     private function __construct() {}
 
-    public static function getInstance(): PDO {
+    public static function getInstance(): PDO
+    {
         if (self::$instance === null) {
-            // Initialisation des variables avant le require
-            // pour éviter les avertissements "Undefined variable"
             $dsn = $user = $pass = '';
             require __DIR__ . '/../db/db_pg_connect.php';
             try {

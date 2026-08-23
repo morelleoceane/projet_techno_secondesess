@@ -8,7 +8,7 @@
  * (rien n'est réellement envoyé au navigateur tant que le buffer n'est pas vidé).
  */
 ob_start();
-
+require_once __DIR__ . '/admin/src/php/utils/all_includes.php';
 // Page demandée (défaut : accueil)
 $page = $_GET['page'] ?? 'accueil';
 

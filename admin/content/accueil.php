@@ -127,4 +127,4 @@ $fallbackImages = [
         </div>
     </div>
 </section>
-<?php // CORRECTION : le script de fallback image est désormais dans admin/assets/js/app.js (initArticleImageFallback) ?>
+<?php ?>
